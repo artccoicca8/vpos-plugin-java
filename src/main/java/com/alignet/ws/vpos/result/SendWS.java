@@ -1,4 +1,4 @@
-package com.alignet.ws.vposResult;
+package com.alignet.ws.vpos.result;
 
 import com.alignet.bean.BeanConsulta;
 import com.alignet.pasarela.crypto.CryptoUtil;

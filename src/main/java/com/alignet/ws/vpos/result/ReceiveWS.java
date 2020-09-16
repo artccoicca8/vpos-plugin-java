@@ -1,11 +1,7 @@
-package com.alignet.ws.vposResult;
+package com.alignet.ws.vpos.result;
 
-import com.alignet.bean.BeanConsulta;
-import com.alignet.pasarela.crypto.CryptoUtil;
-import com.alignet.plugin.C;
-import com.alignet.plugin.Z;
-import com.alignet.plugin.exception.PlugInVPOSException;
 import java.io.Reader;
+
 import org.bouncycastle.crypto.params.AsymmetricKeyParameter;
 import org.bouncycastle.util.encoders.Hex;
 import org.bouncycastle.util.encoders.UrlBase64;
@@ -13,6 +9,12 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Text;
+
+import com.alignet.bean.BeanConsulta;
+import com.alignet.pasarela.crypto.CryptoUtil;
+import com.alignet.plugin.C;
+import com.alignet.plugin.Z;
+import com.alignet.plugin.exception.PlugInVPOSException;
 
 public class ReceiveWS {
 	private AsymmetricKeyParameter BDWS;
@@ -25,7 +27,7 @@ public class ReceiveWS {
 		} catch (Exception e) {
 			throw new PlugInVPOSException("Error leyendo la llave Publica " + e);
 		}
-	}
+	} 
 
 	private AsymmetricKeyParameter addProduct;
 	private String addTax;
