@@ -26,13 +26,11 @@ public class ConsultaEstadoTransacciones {
 		try {
 			FileReader r1 = null;
 			FileReader r2 = null;
-			String vectorI = "";
 
 			r1 = new FileReader(rutaLlavePubCifrado);
 			r2 = new FileReader(rutaLlavePrivFirma);
-			vectorI = vectorInitial;
 			System.out.println("**********Iniciando el plugin**********");
-			SendWS send = new SendWS(r1, r2, vectorI);
+			SendWS send = new SendWS(r1, r2, vectorInitial);
 			System.out.println("********** Cifrando y Firmando el Bean Consulta Trx ...");
 			send.execute(bean);
 		} catch (PlugInVPOSException e) {
@@ -80,7 +78,7 @@ public class ConsultaEstadoTransacciones {
 		try {
 			r1 = new FileReader(rutaLlavePubFirma);
 			r5 = new FileReader(rutaLlavePrivCifrado);
-			ReceiveWS receive = new ReceiveWS(r1, r5, "98bc2b8a83ceec0c");
+			ReceiveWS receive = new ReceiveWS(r1, r5, vectorInitial);
 			System.out.println("********** Descinfrando la respuesta enviada ...");
 			receive.execute(beanC);
 		} catch (PlugInVPOSException e) {
